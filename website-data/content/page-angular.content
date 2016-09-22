@@ -1,0 +1,5 @@
+<h2>Angular Page</h2><br/>
+<h3>We've just loaded a page for you.  However, maybe you noticed that you did not have to reload the entire page.  This is because we are only requested one div from the server and loaded it via JSON, hence we do not need to reload our entire page layout.  Instead of requesting the entire DOM, using the # reference we can load new pages within our website dynamically, and thus load times are reduced.  This technique is called a SPA, single page application.  Cool!
+</h3>
+<br/>
+This website should load correctly without being difficult to read on mobile devices or screens with high resolutions.  Go ahead and try shrinking your browser down, it will compensate with javascript and render the website correctly therefore accounting for lower resolution monitors like laptops automatically.  Even the following operating systems should display correctly thanks to responsive methodology: android, iOS, or even a 4k monitor!"

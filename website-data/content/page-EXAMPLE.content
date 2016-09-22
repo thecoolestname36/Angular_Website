@@ -1,0 +1,11 @@
+<h2>Title</h2><br/>
+
+<article>
+	<header>
+		<hgroup>
+			<h3>Article Title</h3>
+		</hgroup>
+		<time datetime="2015-11-9">Posted 11/9/2015</time>
+	</header>
+	Here we can discuss things :)
+</article>

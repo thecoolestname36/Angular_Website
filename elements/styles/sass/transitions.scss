@@ -1,0 +1,19 @@
+
+@mixin transitionDefinition($transition, $duration, $style, $delay) {
+	-webkit-transition: $transition $duration $style $delay;
+    -moz-transition: $transition $duration $style $delay;
+    -o-transition: $transition $duration $style $delay;
+    transition: $transition $duration $style $delay;
+}
+
+.colorTransition {
+	@include transitionDefinition(color, 200ms, ease-out, 0s);
+}
+
+.backgroundColorTransition {
+	@include transitionDefinition(background-color, 200ms, ease-out, 0s);
+}
+
+.textShadowTransition {
+	@include transitionDefinition(text-shadow, 200ms, ease-out, 0s);
+}
