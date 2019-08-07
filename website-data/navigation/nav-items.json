@@ -1,7 +1,0 @@
-[
-	{"navTitle":"Home", "navLink": "#/" },
-	{"navTitle":"AngularJS", "navLink": "#/angular" },
-	{"navTitle":"Links & Apps", "navLink": "#/linksapps" },
-	{"navTitle":"Dynamic Fail Page", "navLink": "#/page3" },
-	{"navTitle":"Downloads", "navLink": "#/downloads" }
-]

@@ -1,0 +1,112 @@
+<!doctype HTML>
+
+<html lang="en-US">
+
+		<head>
+
+		<!-- HTML Definitions -->
+
+		<title>SRAD's Website</title>
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+		<meta charset="UTF-8">
+		<meta name="description" content="SRAD's Website">
+		<meta name="keywords" content="HTML,CSS,ASPX,JavaScript">
+		<meta name="author" content="Bradley Cutshall">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" type="image/png" href="elements/styles/images/facicon.png" />
+
+		<!-- Stylesheets -->
+
+		<link rel="stylesheet" type="text/css" href="elements/styles/css/main.css?v=1">
+
+		<!-- Package stylesheets -->
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+		<!-- Fonts -->
+		
+		<link href='//fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+
+		<!-- Include packages below -->
+
+		<script type="text/javascript" src="packages/js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="packages/js/angular.min.js"></script>
+		<script tyle="text/javascript" src="packages/js/angular-route.min.js"></script>
+		<script tyle="text/javascript" src="packages/js/angular-sanitize.min.js"></script>
+
+		<!-- Jquery -->
+		<script type="text/javascript" src="elements/scripts/jquery/ApplicationVariables.js?v=1"></script>
+		<script type="text/javascript" src="elements/scripts/jquery/ResponsiveJQuery.js?v=1"></script>
+		<script type="text/javascript" src="elements/scripts/jquery/NavbarControl.js?v=1"></script>
+		<!-- AngularJs -->
+		<script type="text/javascript" src="elements/scripts/angular/angularApps.js"></script>
+		<!-- Angular Apps -->
+		<script type="text/javascript" src="elements/scripts/angular/navigationView.js?v=1"></script>
+		<script type="text/javascript" src="elements/scripts/angular/contentView.js?v=1"></script>
+        <script type="text/javascript" src="elements/scripts/main.js?v=1"></script>
+		
+
+	</head>
+	<body>
+		<!-- Place things to preload here -->
+		<div id="preloader">
+			<i class="fa fa-cog"></i>
+            <i class='fa fa-server'></i>
+		</div>
+		<div id="pageWrap">
+
+			<div id="header">
+				<div id="headings">
+					<span class="logo"><a href="/"><span style="color:darkred;text-shadow:none"><3</span> Brad and Sarah  <span style="text-shadow:none;color:darkred;"><3</span> </a></span>
+				</div>
+			</div>
+            <div id="scrolledTop"></div>
+			<div id="navigationWrap" ng-controller="navigationController">
+                <div id="nav-bar-wrap">
+                    <ul id="navBar">
+                        <li class="navItem" ng-repeat="_navItem in navigationItems" size-after-repeat>
+                            <a class="navLink" href="{{_navItem.navLink}}" ng-click="gotoNavigationTop()">{{_navItem.navTitle}}</a>
+                        </li>
+                    </ul>
+                </div>
+			</div>
+
+			<div id="body">
+				<!-- <div id="leftPanel">
+
+				</div> -->
+				<div id="content" ng-controller="contentController">
+                    <div id='loadingContent' class='loadingContent'><i class='fa fa-cog fa-spin bigCog'>
+                        </i><i class='fa fa-cog fa-spin topCog'></i><i class='fa fa-cog fa-spin bottomCog'></i>
+                    </div>
+					<div ng-view></div>
+				</div>
+
+				<div id="rightPanel">
+					<div id="contactbox">
+							Contact Us
+						<hr>
+                        <p>
+                            <i>Sarah</i><br>
+                            <a href="tel:+12182358794">(218) 235-8794</a><br>
+                            <a href="mailto:farle107@d.umn.edu">farle107@d.umn.edu</a>
+                        </p>
+                        <hr/>
+                        <p>
+                            <i>Brad</i><br>
+                            <a href="tel:+6128508431">(612) 850-8431</a><br>
+                            <a href="mailto:cutsh020@d.umn.edu">cutsh020@d.umn.edu</a>
+                        </p>
+					</div> 
+				</div>
+			</div>
+			
+			<div id="footer">
+			</div>
+		
+		</div>
+		<div id="pageBg"></div>
+	</body>
+</html>

@@ -1,6 +1,6 @@
+
 //* Content View Definition *//
-var contentView = angular.module('contentView', ['ngRoute','ngSanitize']);
-contentView.config(function($routeProvider) {
+angular.module('contentView', ['ngRoute','ngSanitize']).config(function($routeProvider) {
 
 	this.contentRouteProvider = {
 		template   : 'elements/views/contentTemplate.html',
@@ -18,38 +18,46 @@ contentView.config(function($routeProvider) {
 	})
 
 }).controller('contentController', ['$scope', '$location', '$http','$sce', function($scope, $location, $http, $sce) {
-	$scope.content ="<span class=\"loadingHeader\">Loading...</span>" +
-					"<span class=\"loadingContent\"><i class=\"fa fa-cog fa-spin bigCog\">" +
-					"</i><i class=\"fa fa-cog fa-spin topCog\"></i><i class=\"fa fa-cog fa-spin " +
-					"bottomCog\"></i></span>";
-	var getFile = false;
+    $("#page-content").css("display","none");
+    $("#loadingContent").css("display","block");
+	$scope.content = [{pageTitle:"<span id='loadingHeader' class='loadingHeader'>Loading...</span>",
+		pageContent:""}];
 
-	$http.get('website-data/content/page-' + $location.path().substring(1) + '.content') 
+	$http.get('protected/Main.php?request='+$location.path().substring(1))
 		.then(function(response){
+				// ENABLE THIS ONCE CHROME KILLS JQUERY ASYNC
+				//Get files
+				// if(typeof response.data[0].files !== 'undefined') {
+				// 	if((response.data[0].files).length > 0) {
+				// 		var fileArr = [];
+				// 		fileArr = stringToArray(response.data[0].files, ",");
+				// 		for(var i = 0; i < fileArr.length; i++) {
+				// 			$http.get(fileArr[i]);
+				// 		}
+				// 	}
+				// }
+				//Assign content
 
-			console.log("Uncomment $http.get() in contentView.js once google kills \"Synchronous XMLHttpRequest\"");
-			// ENABLE THIS ONCE CHROME KILLS JQUERY ASYNC 
-			//Get files
-			// if(typeof response.data[0].files !== 'undefined') {
-			// 	if((response.data[0].files).length > 0) {
-			// 		var fileArr = [];
-			// 		fileArr = stringToArray(response.data[0].files, ",");
-			// 		for(var i = 0; i < fileArr.length; i++) {
-			// 			$http.get(fileArr[i]);
-			// 		}
-			// 	}
-			// }
-			
-			//Assign content
-			//$scope.content[0].pageTitle = $sce.trustAsHtml(response.data[0].pageTitle);
-			//$scope.content[0].pageContent = $sce.trustAsHtml(response.data[0].pageContent);
-			$scope.content = $sce.trustAsHtml(response.data);
-		}, function(response) {
-			// Error handling
-			$scope.content = $sce.trustAsHtml("<h2>Page Not Found</h2><p>Sorry :(</p>");
-		}
-	);
-}]);
+				$scope.content[0].pageTitle = $sce.trustAsHtml(response.data[0].pageTitle);
+				$scope.content[0].pageContent = $sce.trustAsHtml(response.data[0].pageContent);
+
+                $(document).ready(function() {
+                    $("#page-content").fadeIn(800, function() {
+                        document.responsiveJQuery.execOnResize();
+                        $("#loadingContent").fadeOut(150);
+                    });
+
+                });
+
+
+
+			}, function(response) {
+				// Error handling
+				$scope.content = [{pageTitle:"Page Not Found", pageContent:"Sorry :("}];
+			}
+		);
+	}
+]);
 //end Content View defn
 
 // Util functions

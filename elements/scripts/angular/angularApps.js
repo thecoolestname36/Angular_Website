@@ -3,4 +3,3 @@ angular.element(document).ready(function() {
     angular.bootstrap($("#navigationWrap"), ['navigationView']);
     angular.bootstrap($("#content"), ['contentView']);
 });
-
