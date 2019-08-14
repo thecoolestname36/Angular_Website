@@ -10,8 +10,7 @@
   width='600'
   height='450'
   frameborder='0' style='border:0'
-  src='https://www.google.com/maps/embed/v1/place?key=AIzaSyASuNxcmSY7FVi_gSeWZ2Wm9vw7jOZIIA8
-    &q=46.7949229,-90.6521379' allowfullscreen>
+  src='https://www.google.com/maps/embed/v1/place?q=46.7949229,-90.6521379' allowfullscreen>
 </iframe>
 <br/>
 <h3>Directions to the party house!</h3>
@@ -27,8 +26,7 @@
   width='600'
   height='450'
   frameborder='0' style='border:0'
-  src='https://www.google.com/maps/embed/v1/place?key=AIzaSyASuNxcmSY7FVi_gSeWZ2Wm9vw7jOZIIA8
-    &q=46.7795212,-90.7863625' allowfullscreen>
+  src='https://www.google.com/maps/embed/v1/place?q=46.7795212,-90.7863625' allowfullscreen>
 </iframe>
 
 <script type='text/javascript' src='elements/scripts/javascript/GoogleMaps.js'></script>
@@ -37,7 +35,7 @@
 </script>
 <?php
 // <div id='googleMapsAPI'><span class='googleMapsAPILoading'>Loading Google Maps...</span></div>
-// <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBhXp7720BlhJZGJoMp3cgltIPxdbJwpis&callback=initMap' async defer></script>
+// <script src='https://maps.googleapis.com/maps/api/js?callback=initMap' async defer></script>
 
 //<script>
 //document.responsiveJQuery.googleMapsApiSize();
@@ -48,7 +46,6 @@
 //  width='600'
 //  height='450'
 //  frameborder='0' style='border:0'
-//  src='https://www.google.com/maps/embed/v1/place?key=AIzaSyASuNxcmSY7FVi_gSeWZ2Wm9vw7jOZIIA8
-//    &q=46.7949229,-90.6521379' allowfullscreen>
+//  src='https://www.google.com/maps/embed/v1/place?q=46.7949229,-90.6521379' allowfullscreen>
 //</iframe>
 ?>
