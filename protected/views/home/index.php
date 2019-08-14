@@ -33,7 +33,7 @@
 <script>
 
     $.ajax({
-        url: "https://docs.google.com/document/d/e/2PACX-1vTeLUS7CT2DYxNDqS0B9ELvh-7oQM21eC-IbWQ5HVtPu3SZGZsZvTOwBlVBwSQ83vd35qvXDykehBn9/pub?chrome=false&output=html",
+        url: "{google-docs-url}?chrome=false&output=html",
         async: false
     }).done(function( warmlyDocData ) {
         warmlyDoc = document.implementation.createHTMLDocument('warmlyDoc');
