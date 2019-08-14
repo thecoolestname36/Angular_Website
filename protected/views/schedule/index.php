@@ -11,7 +11,7 @@ $var = 0;
 <script>
 
     $.ajax({
-        url: "https://docs.google.com/document/d/e/2PACX-1vTkwJFtcuyRVnntPXlCwIQzXTGkebw1zf98o5T3IH_8N0wu6qByN2pXlhycSL-c2yUJh50ic-AbsgPF/pub?chrome=false&output=html",
+        url: "{google-docs-url}?chrome=false&output=html",
         async: false
     }).done(function( warmlyDocData ) {
         warmlyDoc = document.implementation.createHTMLDocument('warmlyDoc');
@@ -27,7 +27,7 @@ $var = 0;
     var loadDetailedInformation = function() {
         $("#loadingContent").fadeIn();
         $.ajax({
-            url: "https://docs.google.com/document/d/e/2PACX-1vQglRtJOuTjidlvwPyGPv48JgdBMd60v_RY7luYt42i-WfajIie2HWe-GzeSUSAPelBWELaJpaa067H/pub?chrome=false&output=html",
+            url: "{google-docs-url}?chrome=false&output=html",
             async: false
         }).done(function( warmlyDocData ) {
             warmlyDoc = document.implementation.createHTMLDocument('warmlyDoc');
